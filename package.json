@@ -8,8 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "gh-pages -d dist",
-    "css": "npm tailwindcss -o dist/global.css"
+    "css": "npm tailwindcss -o dist/global.css",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.9",
