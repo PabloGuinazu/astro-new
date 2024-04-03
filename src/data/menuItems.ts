@@ -1,4 +1,4 @@
-import type { menuItem } from "../interfaces";
+import type { menuItem } from "../interfaces/menuInterface";
 
 const menuItems:menuItem[] =[
     {

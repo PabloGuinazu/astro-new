@@ -1,137 +1,40 @@
 ---
 if (Astro.request.method === "POST") {
-  try {
+try {
     const data = await Astro.request.formData();
     const nombre = data.get("nombre");
     const email = data.get("email");
     const telefono = data.get("telefono");
     const mensaje = data.get("mensaje");
-    
-  } catch (error) {
+} catch (error) {
     if (error instanceof Error) {
-      console.error(error.message);
+    console.error(error.message);
     }
-  }
+}
 }
 ---
-<div class="bg-white max-w-7xl contenedor">
-    <main class="contenedor seccion contenido-centrado">
-        <h2 class="text-4xl centrar-texto pt-5">Llena el formulario de Contacto</h2>
+<div class="bg-white max-w-[120rem] w-[95%] my-0 mx-auto">
+    <main class="w-[95%] mx-auto my-8 max-w-[800px]">
+        <h2 class="text-4xl text-center pt-5">Llena el formulario de Contacto</h2>
 
-        <form class="contacto" method="POST" data-netlify="true">
+        <form class="py-5 " method="POST" data-netlify="true">
             <fieldset>
-                <legend>Contactanos</legend>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" placeholder="Nombre" required >
+                <legend class="text-gray-400 text-3xl py-3">Contactanos</legend>
+                <label class="block uppercase font-bold" for="nombre">Nombre:</label>
+                <input class="p-4 block w-full bg-gray-100 mb-8 border-none rounded-lg" type="text" name="nombre" placeholder="Nombre" required >
 
-                <label for="email">E-mail: </label>
-                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <label class="block uppercase font-bold" for="email">E-mail: </label>
+                <input class="p-4 block w-full bg-gray-100 mb-8 border-none rounded-lg" type="email" name="email" placeholder="Correo electrónico" required>
 
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <label class="block uppercase font-bold" for="telefono">Teléfono:</label>
+                <input class="p-4 block w-full bg-gray-100 mb-8 border-none rounded-lg" type="tel" name="telefono" placeholder="Teléfono" required>
 
-                <label for="mensaje">Mensaje: </label>
-                <textarea  name="mensaje"></textarea>
+                <label class="block uppercase font-bold" for="mensaje">Mensaje: </label>
+                <textarea class="p-4 block w-full bg-gray-100 mb-8 border-none rounded-lg h-80" name="mensaje"></textarea>
 
             </fieldset>
-            <input type="submit" value="Enviar" class="boton boton-verde">
+            <input type="submit" value="Enviar" class="text-white font-bold no-underline text-3xl px-12 py-4 mt-12 text-center border-none block bg-green-500 rounded-md duration-300 ease-in-out hover:scale-110">
 
         </form>
     </main>
 </div>
-
-<style>
-    .contenedor {
-    width: 95%;
-    max-width: 120rem; /** = 1200px; **/
-    margin: 0 auto;
-}
-.seccion {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-.contenido-centrado {
-    max-width: 800px;
-}
-.fw-300 {
-    font-weight: 300;
-}
-.centrar-texto {
-    text-align: center;
-}
-/** Contacto **/
-.contacto p {
-    font-size: 1.4rem;
-    color: #4f4f4f;
-    margin: 2rem 0 0 0;
-}
-legend {
-    font-size: 2rem;
-    color: #4f4f4f;
-}
-label {
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-}
-input:not([type="submit"]),
-textarea,
-select {
-    padding: 1rem;
-    display: block;
-    width: 100%;
-    background-color: #e1e1e1;
-    margin-bottom: 2rem;
-    border: none;
-    border-radius: 1rem;
-}
-input[type="radio"]{
-    width: auto;
-    margin: 0;
-}
-select {
-    -webkit-appearance: none;
-    appearance: none;
-}
-textarea {
-    height: 20rem;
-}
-.forma-contacto {
-    max-width:30rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-/**/
-.imagen-contacto {
-    background-image: url(../img/encuentra.jpg);
-    background-position: center center;
-    background-size: cover;
-    height: 40rem;
-    display: flex;
-    align-items: center;
-}
-.contenido-contacto {
-    flex: 0 0 95%;
-    color: #ffffff;
-}
-.contenido-contacto p {
-    font-size: 1.8rem;
-}
-.boton {
-    color: #ffffff;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.8rem;
-    padding: 1rem 3rem;
-    margin-top: 3rem;
-    display: inline-block;
-    text-align: center;
-    border: none;
-    display: block;
-    flex: 0 0 100%;
-}
-.boton-verde {
-    background-color: #71B100;
-}
-</style>

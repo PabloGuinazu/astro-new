@@ -1,6 +1,6 @@
 ---
 import MenuItemView from "./MenuItemView.astro";
-import type { menuItem } from '../interfaces';
+import type { menuItem } from '../interfaces/menuInterface';
 
 interface Props{
     items:menuItem[];
@@ -12,4 +12,5 @@ const { items }= Astro.props;
         items.map(item => <MenuItemView {...item}/> )
     }
     <slot/>
+    </div>
 </div>

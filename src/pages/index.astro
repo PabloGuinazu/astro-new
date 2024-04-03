@@ -1,17 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Header from '../components/Header.astro';
+import Hero from '../components/Hero2.astro';
+import Header from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
-import Card from '../components/Card.astro'
 import FormularioContact from '../components/FormularioContact.astro';
+import CardContent from '../components/CardContent.astro';
+import cardItems from '../data/cardItem';
 
 ---
-
 <Layout title='Pagina prueba'>
 <Header/>
-<Hero/ ></Hero>
-<Card/>
+<Hero/>
+<CardContent cards ={cardItems}/>
 <FormularioContact/>
 <Footer/>
 </Layout>
